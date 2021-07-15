@@ -1,0 +1,4 @@
+git branch  // visualizar os branchs
+git branch + nome  //cria 
+git checkout + nome // muda branch
+git checkout -b + nome // muda e cria ao mesmo tempo
