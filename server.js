@@ -2,7 +2,13 @@ const express = require('express');
 const app = express();
 
 app.get('/',(req,res)=>{
-    res.send('Hello<b>World</b>!');
+    res.send(`
+        <form action="/" method="POST">
+        Nome: <input type="text name="nome">
+        <button>Olá Mundo</button>
+        </form>
+
+    `);
 });
 app.get('/contato',(req,res)=>{
     res.send('Obrigado por entrar em contato com a gente');
