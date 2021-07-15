@@ -1,3 +1,5 @@
 1- iniciar o git - git init etc...
 2- iniciar o npm - npm init -y
 3- npm install express
+4- npm install nodemon --save-dev // instala na dependencia de desenvolvimento
+5- npx nodemon server.js // fica assistindo o servidor
