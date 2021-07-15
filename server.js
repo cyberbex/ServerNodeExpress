@@ -11,7 +11,7 @@ app.get('/',(req,res)=>{
     `);
 });
 app.get('/contato',(req,res)=>{
-    res.send('Obrigado por entrar em contato com a gente');
+    res.send('Obrigado por entrar em contato a gente');
 });
 
 app.listen(3000,()=>{
