@@ -10,9 +10,21 @@ app.get('/',(req,res)=>{
 
     `);
 });
-app.get('/contato',(req,res)=>{
-    res.send('Obrigado por entrar em contato a gente');
+
+//recebendo parametros via url, "?" faz com que o parametro seja opcional
+app.get('/teste/:parametro_1?/:parametro_2?',(req,res)=>{
+    console.log(req.params);
+    res.send(req.params.parametro_2);
 });
+
+//recebendo parametros via url, no forma de query string
+//localhost:3000/teste_2/?nome=bruno&temp=45.6 recebido pela url do navegador
+//o ponto de interrogacao indica que é uma query string
+ app.get('/teste_2/:parametro_1?/:parametro_2?',(req,res)=>{
+    res.send(req.query.nome);
+    console.log(req.query.temp);
+    
+}); 
 
 app.listen(3000,()=>{
     console.log('Acessar http://localHost:3000');
