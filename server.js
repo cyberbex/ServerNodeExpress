@@ -1,3 +1,4 @@
+//Sistema full MVC(Backend e frontend tudo junto)
 const express = require('express');
 const app = express();
 const routes = require('./routes');
