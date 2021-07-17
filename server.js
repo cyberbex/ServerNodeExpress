@@ -1,15 +1,31 @@
 const express = require('express');
 const app = express();
 
+//----declaração do recibimento de um objeto pelo corpo da requisição---
+app.use(
+    express.urlencoded(
+        {
+            extended:true
+        }
+    )
+);
+
 app.get('/',(req,res)=>{
     res.send(`
         <form action="/" method="POST">
-        Nome: <input type="text name="nome">
-        <button>Olá Mundo</button>
+        Nome: <input type="text" name="nome">
+        <button>Me aperta</button>
         </form>
 
     `);
 });
+
+//----recebe um objeto pelo corpo da requisição------
+app.post('/',(req,res)=>{
+    console.log(req.body);
+    res.send(`O que você me enviou foi: ${req.body.nome}`);
+});
+//----------------------------------------------------
 
 //recebendo parametros via url, "?" faz com que o parametro seja opcional
 app.get('/teste/:parametro_1?/:parametro_2?',(req,res)=>{
